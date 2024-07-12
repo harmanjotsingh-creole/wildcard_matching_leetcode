@@ -34,7 +34,7 @@ My solution achieved a runtime of 94ms, outperforming 88.89% of users with JavaS
 In this Question, case when '\*' is in the pattern is the only challenging part.
 '\*' represent any sequence of characters (including the empty sequence).
 
-If the current character in p is '\*', update the markers to the current positions of string and pattern, respectively, and only increment pattern marker. This step is crucial for handling cases where the '\*' can match multiple characters in s. After that start with matching string if any blocker comes then roll back to marker position and again start matching this method is called backtracking.
+If the current character in p is '\*', update the markers to the current positions of string and pattern, respectively, and only increment pattern marker. This step is crucial for handling cases where the '\*' can match multiple characters in s. After that start with matching string if any blocker comes then backtrack to marker position increment string marker by one and again start matching this method is called backtracking.
 
 ```
             case "*":
@@ -55,7 +55,6 @@ If the current character in p is '\*', update the markers to the current positio
                     return false;
                 }
 ```
-
 
 This two case shows logic explained above ,
 In which when '\*' comes we store value of i and j in v and y respectively. Then again start matching string and if any blocker comes it goes in default which backtrack to v and y and then start matching again by incrementing value of v.
